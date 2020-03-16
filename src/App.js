@@ -1,25 +1,20 @@
 import React from 'react';
+import { ConnectedRouter } from 'connected-react-router'
+
+import { Nav , Rout } from './Component'
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+const App= ({history, context})=>{
   return (
-    <div className="App">
+    <div>
       <header className="App-header">
-        <h1 style={{color : "red"}}>shady Say Hallo</h1>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <img src={logo} className="App-logo image-responsive" alt="logo" />
       </header>
+      <ConnectedRouter history={history} context={context}>
+        <Nav />
+        <Rout />
+      </ConnectedRouter>
     </div>
   );
 }
